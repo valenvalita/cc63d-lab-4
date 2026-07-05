@@ -1,0 +1,27 @@
+name: CI
+
+# Se dispara en cada push a cualquier rama o en cada pull request
+on: [push, pull_request]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    
+    steps:
+      # 1. Traer el código del repositorio
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      # 2. Preparar el entorno de Python
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11' # O la versión específica de tu proyecto
+          
+      # 3. Instalar dependencias (Etapa build)
+      - name: Install dependencies
+        run: pip install -r requirements-dev.txt
+        
+      # 4. Correr las pruebas (Etapa test)
+      - name: Run tests
+        run: pytest
