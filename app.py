@@ -165,7 +165,7 @@ def index():
 
 @app.route("/health")
 def health():
-    return jsonify({"status": "healthy"})
+    return jsonify({"status": "ok"})
 
 
 # --- Endpoint del laboratorio: quema error budget de forma controlada ---
