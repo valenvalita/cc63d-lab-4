@@ -25,3 +25,7 @@ jobs:
       # 4. Correr las pruebas (Etapa test)
       - name: Run tests
         run: pytest
+
+      # 5. Correr lint
+      - name: Run lint
+        run: ruff check .
