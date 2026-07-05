@@ -16,7 +16,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11' # O la versión específica de tu proyecto
+          python-version: '3.11'
           
       # 3. Instalar dependencias (Etapa build)
       - name: Install dependencies
