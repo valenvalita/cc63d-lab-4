@@ -32,4 +32,4 @@ def client():
 def crear_servicio(client, name="payments-api", team="payments"):
     """Helper: crea un servicio y devuelve su id."""
     resp = client.post("/services", json={"name": name, "team": team})
-    return resp.get_json()["id"]
+    return resp.get_json()["name"]
